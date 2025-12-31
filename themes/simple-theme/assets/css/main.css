@@ -16,6 +16,16 @@
   @apply active:text-orange-800 active:decoration-1;
 }
 
+/* ヘッダーのタイトルリンクは色を変えない */
+header .link {
+  @apply text-inherit !important;
+  @apply hover:text-inherit !important;
+  @apply focus-visible:text-inherit !important;
+  @apply active:text-inherit !important;
+  @apply visited:text-inherit !important;
+  @apply no-underline !important;
+}
+
 /* Divider コンポーネントのスタイル */
 .divider {
   @apply border-t border-solid-gray-420;

@@ -999,6 +999,12 @@ video {
 .flex-col {
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
 .gap-4 {
   gap: 1rem;
 }
@@ -1029,6 +1035,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(148 148 148 / var(--tw-border-opacity, 1));
 }
+.bg-solid-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(230 230 230 / var(--tw-bg-opacity, 1));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
@@ -1036,9 +1046,17 @@ video {
 .p-4 {
   padding: 1rem;
 }
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 .py-6 {
   padding-top: 1.5rem;
@@ -1170,6 +1188,26 @@ video {
   --tw-text-opacity: 1;
   color: rgb(199 71 0 / var(--tw-text-opacity, 1));
   text-decoration-thickness: 1px;
+}
+
+/* ヘッダーのタイトルリンクは色を変えない */
+header .link {
+  color: inherit !important;
+}
+header .link:hover {
+  color: inherit !important;
+}
+header .link:focus-visible {
+  color: inherit !important;
+}
+header .link:active {
+  color: inherit !important;
+}
+header .link:visited {
+  color: inherit !important;
+}
+header .link {
+  text-decoration-line: none !important;
 }
 
 /* Divider コンポーネントのスタイル */
@@ -1942,6 +1980,10 @@ details[open] .accordion-icon {
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+.hover\:bg-solid-gray-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 204 204 / var(--tw-bg-opacity, 1));
 }
 .hover\:underline:hover {
   text-decoration-line: underline;

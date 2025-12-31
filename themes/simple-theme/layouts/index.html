@@ -35,9 +35,6 @@
           {{ end }}
           {{ if .Summary }}
             <p class="text-std-16N-170">{{ .Summary }}</p>
-            {{ if .Truncated }}
-              <a href="{{ .RelPermalink }}" class="text-std-16N-170 text-solid-blue-600 hover:underline">続きを読む</a>
-            {{ end }}
           {{ end }}
         </article>
       {{ end }}

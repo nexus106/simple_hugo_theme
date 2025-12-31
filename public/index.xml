@@ -22,5 +22,19 @@
       <guid>http://localhost:1313/post/first-post/</guid>
       <description>&lt;p&gt;これは最初の記事です。&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Hugoテーマの作成</title>
+      <link>http://localhost:1313/post/second-post/</link>
+      <pubDate>Mon, 29 Dec 2025 15:30:00 +0900</pubDate>
+      <guid>http://localhost:1313/post/second-post/</guid>
+      <description>&lt;p&gt;Hugoでシンプルなテーマを作成しています。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Markdown要素のテスト</title>
+      <link>http://localhost:1313/post/markdown-test/</link>
+      <pubDate>Sun, 28 Dec 2025 09:00:00 +0900</pubDate>
+      <guid>http://localhost:1313/post/markdown-test/</guid>
+      <description>&lt;p&gt;この記事はMarkdownの各種要素をテストするための記事です。&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

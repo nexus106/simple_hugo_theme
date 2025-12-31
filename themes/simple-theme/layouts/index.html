@@ -23,6 +23,16 @@
               {{ end }}
             {{ end }}
           </div>
+          {{ if or .Params.categories .Params.tags }}
+          <div class="flex flex-wrap gap-2 mb-3">
+            {{ with .Params.categories }}
+            <a href="{{ "/categories/" | relLangURL }}{{ index . 0 | urlize }}/" class="px-2 py-1 bg-solid-gray-100 text-solid-gray-700 text-sm rounded hover:bg-solid-gray-200">📁 {{ index . 0 }}</a>
+            {{ end }}
+            {{ range .Params.tags }}
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="px-2 py-1 bg-solid-blue-50 text-solid-blue-600 text-sm rounded hover:bg-solid-blue-100">🏷️ {{ . }}</a>
+            {{ end }}
+          </div>
+          {{ end }}
           {{ if .Summary }}
             <p class="text-std-16N-170">{{ .Summary }}</p>
             {{ if .Truncated }}

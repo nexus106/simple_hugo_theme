@@ -11,3 +11,8 @@ summaryLength = 7
 [params]
   description = "長文を書くブログ"
   author = "nexus106"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,4 +1,5 @@
 ---
+draft: true
 categories: ["技術"]
 tags: ["hugo", "go", "web開発"]
 title: "最初の記事"

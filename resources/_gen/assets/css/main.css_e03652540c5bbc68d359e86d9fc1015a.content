@@ -1985,9 +1985,6 @@ details[open] .accordion-icon {
   --tw-bg-opacity: 1;
   background-color: rgb(204 204 204 / var(--tw-bg-opacity, 1));
 }
-.hover\:underline:hover {
-  text-decoration-line: underline;
-}
 @media (min-width: 48em) {
 
   .desktop\:-my-1 {

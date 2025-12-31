@@ -1,0 +1,41 @@
+{{/*
+NotificationBanner コンポーネント
+
+使用例:
+  {{ partial "components/notification-banner.html" (dict
+    "type" "info1"
+    "style" "standard"
+    "title" "お知らせ"
+    "content" "通知内容"
+  )}}
+
+パラメータ:
+  - type: "info1", "info2", "warning", "error", "success" のいずれか (デフォルト: "info1")
+  - style: "standard", "color-chip" のいずれか (デフォルト: "standard")
+  - title: バナーのタイトル
+  - content: バナーの内容
+*/}}
+{{ $type := .type | default "info1" }}
+{{ $style := .style | default "standard" }}
+
+<div class="notification-banner notification-banner-{{ $type }} notification-banner-{{ $style }}" data-type="{{ $type }}" data-style="{{ $style }}">
+  <div class="col-span-2 grid gap-4 desktop:gap-x-6">
+    <svg aria-hidden="true" class="justify-self-center mt-[calc(3/16*1rem)] w-7 h-7 max-w-none max-h-none desktop:w-11 desktop:h-11 desktop:-my-1" fill="none" viewBox="0 0 24 24">
+      {{ if eq $type "error" }}
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+      {{ else if eq $type "warning" }}
+        <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="currentColor"/>
+      {{ else if eq $type "success" }}
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
+      {{ else }}
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
+      {{ end }}
+    </svg>
+    <span class="pt-[calc(3/16*1rem)] text-std-17B-170 text-solid-gray-900 desktop:text-std-20B-150 desktop:pt-0.5">
+      {{ .title }}
+    </span>
+  </div>
+  <div class="text-std-16N-170">
+    {{ .content | safeHTML }}
+  </div>
+</div>

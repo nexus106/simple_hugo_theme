@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="author" content="{{ .Site.Params.author | default "Site Author" }}">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+<!-- CSS -->
+{{ $css := resources.Get "css/main.css" }}
+{{ $style := $css | postCSS }}
+{{ if hugo.IsProduction }}
+  {{ $style = $style | minify | fingerprint }}
+{{ end }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+<!-- Favicon (optional) -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- Canonical URL -->
+{{ if .Permalink }}
+  <link rel="canonical" href="{{ .Permalink }}">
+{{ end }}

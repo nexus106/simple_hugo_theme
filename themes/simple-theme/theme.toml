@@ -1,0 +1,18 @@
+name = "Simple Theme"
+license = "MIT"
+licenselink = "https://github.com/yourusername/simple-hugo-theme/blob/main/LICENSE"
+description = "A simple Hugo theme based on design-system-example-components-react"
+homepage = "https://github.com/yourusername/simple-hugo-theme"
+demosite = "https://example.com"
+tags = ["blog", "simple", "responsive", "minimal"]
+features = ["blog", "responsive-design", "design-system"]
+min_version = "0.112.0"
+
+[author]
+  name = "Your Name"
+  homepage = "https://github.com/yourusername"
+
+[original]
+  name = "design-system-example-components-react"
+  homepage = "https://github.com/digital-go-jp/design-system-example-components"
+  repo = "https://github.com/digital-go-jp/design-system-example-components"

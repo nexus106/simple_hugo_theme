@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="mx-auto max-w-4xl px-4 py-8">
+  <h1 class="text-std-36B-140 mb-8">{{ .Site.Title }}</h1>
+
+  {{ $posts := where .Site.RegularPages "Type" "post" }}
+  {{ if $posts }}
+    <div class="flex flex-col gap-6">
+      {{ range $posts }}
+        <article class="border-b border-solid-gray-420 pb-6">
+          <h2 class="text-std-24B-150 mb-2">
+            <a href="{{ .RelPermalink }}" class="link">
+              {{ .Title }}
+            </a>
+          </h2>
+          <div class="text-std-16N-170 text-solid-gray-700 mb-3">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">
+              {{ .Date.Format "2006-01-02" }}
+            </time>
+            {{ if .Lastmod }}
+              {{ if ne .Date .Lastmod }}
+                <span class="mx-2">|</span>
+                <span>更新: {{ .Lastmod.Format "2006-01-02" }}</span>
+              {{ end }}
+            {{ end }}
+          </div>
+          {{ if .Summary }}
+            <p class="text-std-16N-170">{{ .Summary }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+  {{ else }}
+    <p class="text-std-18N-160 text-solid-gray-700">記事がまだありません。</p>
+  {{ end }}
+</div>
+{{ end }}

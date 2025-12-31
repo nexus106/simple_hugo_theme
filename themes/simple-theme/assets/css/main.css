@@ -1,0 +1,395 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   design-system-example-components-react
+   に基づくコンポーネントスタイル
+   ======================================== */
+
+/* Link コンポーネントのスタイル */
+.link {
+  @apply text-blue-1000 underline underline-offset-[calc(3/16*1rem)];
+  @apply visited:text-magenta-900;
+  @apply hover:text-blue-1000 hover:decoration-[calc(3/16*1rem)];
+  @apply focus-visible:rounded-4 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:bg-yellow-300 focus-visible:text-blue-1000 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300;
+  @apply active:text-orange-800 active:decoration-1;
+}
+
+/* Divider コンポーネントのスタイル */
+.divider {
+  @apply border-t border-solid-gray-420;
+}
+
+/* ========================================
+   Button コンポーネントのスタイル
+   ======================================== */
+.button {
+  @apply underline-offset-[calc(3/16*1rem)];
+  @apply focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300;
+  @apply aria-disabled:pointer-events-none;
+}
+
+/* Button バリアント */
+.button-solid-fill {
+  @apply border-4 border-double border-transparent bg-blue-900 text-white;
+  @apply hover:bg-blue-1000 hover:underline;
+  @apply active:bg-blue-1200 active:underline;
+  @apply aria-disabled:bg-solid-gray-300 aria-disabled:text-solid-gray-50;
+}
+
+.button-outline {
+  @apply border border-current bg-white text-blue-900;
+  @apply hover:bg-blue-200 hover:text-blue-1000 hover:underline;
+  @apply active:bg-blue-300 active:text-blue-1200 active:underline;
+  @apply aria-disabled:bg-white aria-disabled:text-solid-gray-300;
+}
+
+.button-text {
+  @apply text-blue-900 underline;
+  @apply hover:bg-blue-50 hover:text-blue-1000 hover:decoration-[calc(3/16*1rem)];
+  @apply active:bg-blue-100 active:text-blue-1200;
+  @apply focus-visible:bg-yellow-300;
+  @apply aria-disabled:bg-transparent aria-disabled:focus-visible:bg-yellow-300 aria-disabled:text-solid-gray-300;
+}
+
+/* Button サイズ */
+.button-lg {
+  @apply min-h-14 rounded-8 px-4 py-3 text-oln-16B-100;
+  min-width: calc(136/16*1rem);
+}
+
+.button-md {
+  @apply min-h-12 rounded-8 px-4 py-2 text-oln-16B-100;
+  min-width: 6rem;
+}
+
+.button-sm {
+  @apply relative min-h-9 rounded-6 px-3 py-0.5 text-oln-16B-100;
+  min-width: 5rem;
+}
+
+.button-xs {
+  @apply relative min-h-7 rounded-4 px-2 py-0.5 text-oln-14B-100;
+  min-width: 4.5rem;
+}
+
+/* ========================================
+   Blockquote コンポーネントのスタイル
+   ======================================== */
+.blockquote {
+  @apply border-l-8 border-solid-gray-536 py-2 pl-6 pr-4 mx-10;
+}
+
+/* ========================================
+   Breadcrumbs コンポーネントのスタイル
+   ======================================== */
+.breadcrumbs {
+  @apply inline;
+}
+
+.breadcrumbs-item {
+  @apply inline break-words;
+}
+
+.breadcrumbs-link {
+  @apply text-blue-1000 text-oln-16N-100 underline underline-offset-[calc(3/16*1rem)];
+  @apply hover:text-blue-900 hover:decoration-[calc(3/16*1rem)];
+  @apply active:text-orange-800 active:decoration-1;
+  @apply focus-visible:rounded-4 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:bg-yellow-300 focus-visible:text-blue-1000 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300;
+}
+
+.breadcrumbs-current {
+  @apply inline break-words text-oln-16N-100;
+}
+
+/* ========================================
+   List (Ul/Ol) コンポーネントのスタイル
+   ======================================== */
+.list-ul,
+.list-ol {
+  @apply pl-8 list-[revert];
+}
+
+/* ========================================
+   NotificationBanner コンポーネントのスタイル
+   ======================================== */
+.notification-banner {
+  @apply grid grid-cols-[var(--icon-size)_1fr_minmax(0,auto)] grid-rows-[minmax(calc(36/16*1rem),auto)] border-current px-4 pt-2 pb-6 gap-4;
+  --icon-size: calc(24/16*1rem);
+}
+
+@media (min-width: 768px) {
+  .notification-banner {
+    @apply desktop:gap-x-6 desktop:px-6 desktop:pt-6 desktop:pb-8;
+    --icon-size: calc(36/16*1rem);
+  }
+}
+
+/* NotificationBanner スタイル */
+.notification-banner-standard {
+  @apply border-[calc(3/16*1rem)] rounded-12;
+}
+
+.notification-banner-color-chip {
+  --color-chip-color: currentColor;
+  @apply border-[calc(2/16*1rem)] !pl-6 shadow-[inset_calc(8/16*1rem)_0_0_0_var(--color-chip-color)];
+}
+
+@media (min-width: 768px) {
+  .notification-banner-color-chip {
+    @apply desktop:!pl-10 desktop:shadow-[inset_calc(16/16*1rem)_0_0_0_var(--color-chip-color)];
+  }
+}
+
+/* NotificationBanner タイプ */
+.notification-banner-info1 {
+  @apply text-blue-900;
+}
+
+.notification-banner-info2 {
+  @apply text-solid-gray-536;
+}
+
+.notification-banner-warning {
+  @apply text-warning-yellow-2;
+  --color-chip-color: theme('colors.yellow.400');
+}
+
+.notification-banner-error {
+  @apply text-error-1;
+}
+
+.notification-banner-success {
+  @apply text-success-2;
+}
+
+/* ========================================
+   Input コンポーネントのスタイル
+   ======================================== */
+.input {
+  @apply max-w-full rounded-8 border bg-white px-4 py-3 border-solid-gray-600 text-oln-16N-100 text-solid-gray-800;
+  @apply hover:[&:read-write]:border-black;
+  @apply focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300;
+  @apply aria-[invalid=true]:border-error-1 aria-[invalid=true]:[&:read-write]:hover:border-red-1000;
+  @apply read-only:border-dashed;
+  @apply aria-disabled:border-solid-gray-300 aria-disabled:!border-solid aria-disabled:bg-solid-gray-50 aria-disabled:text-solid-gray-420 aria-disabled:pointer-events-none;
+}
+
+.input-sm {
+  @apply h-10;
+}
+
+.input-md {
+  @apply h-12;
+}
+
+.input-lg {
+  @apply h-14;
+}
+
+/* ========================================
+   Label コンポーネントのスタイル
+   ======================================== */
+.label {
+  @apply text-solid-gray-800;
+}
+
+.label-sm {
+  @apply text-std-16B-170;
+}
+
+.label-md {
+  @apply text-std-17B-170;
+}
+
+.label-lg {
+  @apply text-std-18B-160;
+}
+
+/* ========================================
+   ErrorText コンポーネントのスタイル
+   ======================================== */
+.error-text {
+  @apply text-dns-16N-130 text-error-1;
+}
+
+/* ========================================
+   Accordion コンポーネントのスタイル
+   ======================================== */
+.accordion {
+  @apply border-b border-solid-gray-420;
+  --icon-size: calc(20/16*1rem);
+}
+
+@media (min-width: 768px) {
+  .accordion {
+    --icon-size: calc(32/16*1rem);
+  }
+}
+
+.accordion-summary {
+  @apply relative block cursor-default;
+  padding: 0.5rem calc(var(--icon-size) + 0.75rem) 0.5rem 0.5rem;
+}
+
+.accordion-summary:hover {
+  @apply bg-solid-gray-50;
+}
+
+.accordion-summary:focus-visible {
+  @apply rounded-4 bg-yellow-300 outline outline-4 outline-black;
+  outline-offset: calc(2/16*1rem);
+  box-shadow: 0 0 0 calc(2/16*1rem) theme('colors.yellow.300');
+}
+
+.accordion-summary::marker {
+  content: '';
+}
+
+@media (min-width: 768px) {
+  .accordion-summary {
+    padding: 0.875rem calc(var(--icon-size) + 1.25rem) 0.875rem 1rem;
+  }
+}
+
+.accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-icon {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.125rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-top: calc((1lh - var(--icon-size)) / 2);
+  @apply border border-current bg-white text-blue-1000 rounded-full;
+}
+
+.accordion-summary:hover .accordion-icon {
+  outline: 2px solid currentColor;
+}
+
+details[open] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .accordion-icon {
+    top: 0.875rem;
+    left: 0.375rem;
+  }
+}
+
+.accordion-content {
+  padding: 1rem 0.5rem 1rem calc(var(--icon-size) + 0.75rem);
+}
+
+@media (min-width: 768px) {
+  .accordion-content {
+    padding: 1.5rem 1rem 1.5rem calc(var(--icon-size) + 1.25rem);
+  }
+}
+
+/* ========================================
+   Table コンポーネントのスタイル
+   ======================================== */
+.table {
+  @apply w-full text-std-16N-170;
+}
+
+.table thead tr {
+  @apply border-b border-black bg-solid-gray-100;
+}
+
+.table th {
+  @apply px-4 py-5 text-start align-top;
+}
+
+.table tbody tr {
+  @apply border-b border-solid-gray-420;
+}
+
+.table td {
+  @apply px-4 py-5 align-top;
+}
+
+/* ========================================
+   HamburgerMenuButton コンポーネントのスタイル
+   ======================================== */
+.hamburger-menu-button {
+  @apply flex w-fit touch-manipulation items-center gap-x-1 rounded-6 px-3 pb-1.5 pt-1 text-oln-16N-100;
+  @apply hover:bg-solid-gray-50 hover:underline hover:underline-offset-[calc(3/16*1rem)];
+  @apply focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:outline-black focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300;
+}
+
+/* 記事本文（prose）のカスタムスタイル */
+.prose {
+  @apply text-std-16N-170;
+}
+
+.prose h2 {
+  @apply text-std-28B-150 mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-std-24B-150 mt-6 mb-3;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose ul,
+.prose ol {
+  @apply mb-4 pl-8 list-[revert];
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose code {
+  @apply bg-solid-gray-200 px-1 py-0.5 rounded text-dns-14N-130;
+}
+
+.prose pre {
+  @apply bg-solid-gray-100 p-4 rounded mb-4 overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .prose h2 {
+    @apply text-std-24B-150;
+  }
+
+  .prose h3 {
+    @apply text-std-20B-160;
+  }
+
+  .prose p,
+  .prose ul,
+  .prose ol {
+    @apply text-std-16N-175;
+  }
+}
+
+/* モバイル向け調整 */
+@media (max-width: 640px) {
+  article,
+  .mx-auto {
+    @apply px-4;
+  }
+
+  h1 {
+    @apply text-std-36B-140;
+  }
+}

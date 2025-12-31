@@ -1,0 +1,10 @@
+{{/*
+BreadcrumbItem shortcode (inner shortcode for breadcrumbs)
+使用例: {{< breadcrumb-item url="/" title="ホーム" >}}
+*/}}
+{{ $items := $.Parent.Scratch.Get "items" }}
+{{ if not $items }}
+  {{ $.Parent.Scratch.Set "items" (slice) }}
+  {{ $items = $.Parent.Scratch.Get "items" }}
+{{ end }}
+{{ $.Parent.Scratch.Set "items" ($items | append (dict "url" (.Get "url" "") "title" (.Get "title"))) }}

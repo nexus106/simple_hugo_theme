@@ -1,0 +1,12 @@
+# Simple Hugo Theme Configuration
+
+baseURL = "https://example.com/"
+title = "My Blog"
+theme = "simple-theme"
+
+languageCode = "ja-jp"
+hasCJKLanguage = true
+
+[params]
+  # Theme parameters can be added here
+  description = "A simple Hugo theme based on design-system-example-components-react"

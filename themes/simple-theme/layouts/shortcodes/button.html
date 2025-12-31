@@ -1,0 +1,12 @@
+{{/*
+Button shortcode
+使用例: {{< button text="送信" variant="solid-fill" size="md" >}}
+*/}}
+{{ $variant := .Get "variant" | default "solid-fill" }}
+{{ $size := .Get "size" | default "md" }}
+{{ $disabled := .Get "disabled" | default false }}
+{{ $type := .Get "type" | default "button" }}
+
+<button class="button button-{{ $variant }} button-{{ $size }}" {{ if $disabled }}aria-disabled="true"{{ end }} type="{{ $type }}">
+  {{ .Get "text" | safeHTML }}
+</button>

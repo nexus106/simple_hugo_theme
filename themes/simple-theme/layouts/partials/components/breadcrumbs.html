@@ -1,0 +1,37 @@
+{{/*
+Breadcrumbs コンポーネント
+
+使用例:
+  {{ partial "components/breadcrumbs.html" (slice
+    (dict "url" "/" "title" "ホーム")
+    (dict "url" "/category/" "title" "カテゴリ")
+    (dict "title" "現在のページ")
+  )}}
+
+パラメータ:
+  - items: パンくずリストの配列
+    - url: リンク先 (現在のページの場合は省略)
+    - title: 表示テキスト
+*/}}
+{{ if . }}
+<nav class="breadcrumbs" aria-label="パンくずリスト">
+  <ol class="inline">
+    {{ range $index, $item := . }}
+      {{ if $item.url }}
+        <li class="breadcrumbs-item">
+          <a href="{{ $item.url }}" class="breadcrumbs-link">
+            {{ $item.title }}
+          </a>
+          <svg aria-hidden="true" class="mx-2 inline" fill="none" height="12" viewBox="0 0 12 12" width="12">
+            <path d="M4.50078 1.2998L3.80078 1.9998L7.80078 5.9998L3.80078 9.9998L4.50078 10.6998L9.20078 5.9998L4.50078 1.2998Z" fill="currentColor"/>
+          </svg>
+        </li>
+      {{ else }}
+        <li class="breadcrumbs-current" aria-current="page">
+          {{ $item.title }}
+        </li>
+      {{ end }}
+    {{ end }}
+  </ol>
+</nav>
+{{ end }}

@@ -1,0 +1,31 @@
+{{/*
+FormGroup shortcode
+使用例: {{< form-group label="名前" id="name" type="text" size="md" placeholder="名前を入力" >}}
+*/}}
+{{ $size := .Get "size" | default "md" }}
+{{ $required := .Get "required" | default false }}
+{{ $error := .Get "error" | default "" }}
+{{ $hasError := ne $error "" }}
+
+<div class="mb-4">
+  {{ with .Get "label" }}
+    <label for="{{ $.Get "id" }}" class="label label-{{ $size }} block mb-2">
+      {{ . }}
+      {{ if $required }}<span class="text-error-1">*</span>{{ end }}
+    </label>
+  {{ end }}
+
+  <input
+    type="{{ .Get "type" | default "text" }}"
+    id="{{ .Get "id" }}"
+    name="{{ .Get "name" | default (.Get "id") }}"
+    class="input input-{{ $size }}"
+    {{ with .Get "placeholder" }}placeholder="{{ . }}"{{ end }}
+    {{ if $hasError }}aria-invalid="true"{{ end }}
+    {{ if $required }}required{{ end }}
+  >
+
+  {{ if $hasError }}
+    <p class="error-text mt-1">{{ $error }}</p>
+  {{ end }}
+</div>

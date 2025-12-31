@@ -1,0 +1,19 @@
+{
+  "name": "simple-hugo-theme",
+  "version": "1.0.0",
+  "description": "Simple Hugo theme based on design-system-example-components-react",
+  "scripts": {
+    "build:css": "postcss themes/simple-theme/assets/css/main.css -o themes/simple-theme/assets/css/dist/main.css",
+    "watch:css": "postcss themes/simple-theme/assets/css/main.css -o themes/simple-theme/assets/css/dist/main.css --watch"
+  },
+  "devDependencies": {
+    "@digital-go-jp/design-tokens": "^1.1.1",
+    "@digital-go-jp/tailwind-theme-plugin": "^0.3.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.17"
+  }
+}

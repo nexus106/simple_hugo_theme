@@ -1,0 +1,10 @@
+# Simple Theme Parameters
+
+description = "A simple Hugo theme based on design-system-example-components-react"
+author = "Author Name"
+
+# Social links (optional)
+# social = [
+#   { name = "twitter", url = "https://twitter.com/username" },
+#   { name = "github", url = "https://github.com/username" }
+# ]

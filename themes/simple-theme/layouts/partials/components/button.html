@@ -1,0 +1,25 @@
+{{/*
+Button コンポーネント
+
+使用例:
+  {{ partial "components/button.html" (dict "text" "送信" "variant" "solid-fill" "size" "md") }}
+
+パラメータ:
+  - text: ボタンテキスト
+  - variant: "solid-fill", "outline", "text" のいずれか (デフォルト: "solid-fill")
+  - size: "lg", "md", "sm", "xs" のいずれか (デフォルト: "md")
+  - disabled: 無効化するかどうか (デフォルト: false)
+  - type: "button", "submit", "reset" のいずれか (デフォルト: "button")
+*/}}
+{{ $variant := .variant | default "solid-fill" }}
+{{ $size := .size | default "md" }}
+{{ $disabled := .disabled | default false }}
+{{ $type := .type | default "button" }}
+
+<button
+  class="button button-{{ $variant }} button-{{ $size }}"
+  {{ if $disabled }}aria-disabled="true"{{ end }}
+  type="{{ $type }}"
+>
+  {{ .text | safeHTML }}
+</button>

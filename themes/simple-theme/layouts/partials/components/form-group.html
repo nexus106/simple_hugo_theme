@@ -1,0 +1,47 @@
+{{/*
+FormGroup コンポーネント (Input + Label + ErrorText)
+
+使用例:
+  {{ partial "components/form-group.html" (dict
+    "label" "名前"
+    "id" "name"
+    "type" "text"
+    "size" "md"
+    "error" "エラーメッセージ"
+  )}}
+
+パラメータ:
+  - label: ラベルテキスト
+  - id: input要素のID
+  - type: inputのtype属性 (デフォルト: "text")
+  - size: "sm", "md", "lg" のいずれか (デフォルト: "md")
+  - error: エラーメッセージ（ある場合）
+  - placeholder: プレースホルダーテキスト
+  - required: 必須項目かどうか (デフォルト: false)
+*/}}
+{{ $size := .size | default "md" }}
+{{ $required := .required | default false }}
+{{ $hasError := and (.error) (ne .error "") }}
+
+<div class="mb-4">
+  {{ if .label }}
+    <label for="{{ .id }}" class="label label-{{ $size }} block mb-2">
+      {{ .label }}
+      {{ if $required }}<span class="text-error-1">*</span>{{ end }}
+    </label>
+  {{ end }}
+
+  <input
+    type="{{ .type | default "text" }}"
+    id="{{ .id }}"
+    name="{{ .name | default .id }}"
+    class="input input-{{ $size }}"
+    {{ if .placeholder }}placeholder="{{ .placeholder }}"{{ end }}
+    {{ if $hasError }}aria-invalid="true"{{ end }}
+    {{ if $required }}required{{ end }}
+  >
+
+  {{ if $hasError }}
+    <p class="error-text mt-1">{{ .error }}</p>
+  {{ end }}
+</div>

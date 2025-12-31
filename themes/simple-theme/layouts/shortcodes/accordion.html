@@ -1,0 +1,20 @@
+{{/*
+Accordion shortcode
+使用例: {{< accordion id="accordion-1" summary="アコーディオンヘッダー" content="アコーディオン内容" >}}
+*/}}
+{{ $id := .Get "id" | default "accordion" }}
+{{ $open := .Get "open" | default false }}
+
+<details class="accordion" id="{{ $id }}"{{ if $open }} open{{ end }}>
+  <summary class="accordion-summary">
+    <span class="accordion-icon">
+      <svg aria-hidden="true" class="pointer-events-none mt-0.5 w-4 h-4 desktop:w-auto desktop:h-auto" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M16.668 5.5L10.0013 12.1667L3.33464 5.5L2.16797 6.66667L10.0013 14.5L17.8346 6.66667L16.668 5.5Z" fill="currentColor"/>
+      </svg>
+    </span>
+    {{ .Get "summary" | safeHTML }}
+  </summary>
+  <div class="accordion-content">
+    {{ .Get "content" | safeHTML }}
+  </div>
+</details>

@@ -1900,6 +1900,9 @@ details[open] .accordion-icon {
     font-weight: 700;
   }
 }
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
 @media (min-width: 48em) {
 
   .desktop\:-my-1 {

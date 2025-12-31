@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="mx-auto max-w-4xl px-4 py-8">
-  <h1 class="text-std-36B-140 mb-8">{{ .Site.Title }}</h1>
+  <!-- <h1 class="text-std-36B-140 mb-8">{{ .Site.Title }}</h1> -->
 
   {{ $posts := where .Site.RegularPages "Type" "post" }}
   {{ if $posts }}
@@ -25,6 +25,9 @@
           </div>
           {{ if .Summary }}
             <p class="text-std-16N-170">{{ .Summary }}</p>
+            {{ if .Truncated }}
+              <a href="{{ .RelPermalink }}" class="text-std-16N-170 text-solid-blue-600 hover:underline">続きを読む</a>
+            {{ end }}
           {{ end }}
         </article>
       {{ end }}

@@ -1,10 +1,13 @@
-baseURL = "http://example.com/"
-title = "My Blog"
+baseURL = "https://blog.nexus106.com/"
+title = "長文を書くブログ"
 theme = "simple-theme"
 
 languageCode = "ja-jp"
 hasCJKLanguage = true
 
+# トップページの記事要約の長さ（文字数）
+summaryLength = 7
+
 [params]
-  description = "A simple Hugo theme based on design-system-example-components-react"
-  author = "Author Name"
+  description = "長文を書くブログ"
+  author = "nexus106"
